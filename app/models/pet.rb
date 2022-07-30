@@ -1,5 +1,6 @@
 class Pet < ApplicationRecord
   has_many :pet_histories
+  validates :name, :race, :birthdate, presence: true
   
   def to_s
     name

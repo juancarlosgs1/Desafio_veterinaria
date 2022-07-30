@@ -15,5 +15,17 @@
   <%= @client.email %>
 </p>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<p>
+  <% @client.pets.each_with_index do |data, i| %>
+    <p>
+      <%= "<strong>Pet #{i+1}:</strong>".html_safe %>
+      <%= data.name %>  
+      <%= data.max_height %> cm 
+      <%= data.max_weight %> kg
+    </p>
+   <% end %>
+ </p>
+
+ <%= link_to 'Add Pet', client_pets_path(@client), class: 'btn btn-primary' %>
+ <%= link_to 'Edit', edit_client_path(@client), class: 'btn btn-primary' %>
+ <%= link_to 'Back', clients_path, class: 'btn btn-primary' %>

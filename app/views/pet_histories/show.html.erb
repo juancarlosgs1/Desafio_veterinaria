@@ -20,5 +20,5 @@
   <%= @pet_history.description %>
 </p>
 
-<%= link_to 'Edit', edit_pet_pet_history_path(@pet, @pet_history) %> |
-<%= link_to 'Back', pet_pet_histories_path(@pet) %>
+<%= link_to 'Edit', edit_pet_history_path(@pet_history), class: 'btn btn-primary' %> |
+<%= link_to 'Back', pet_pet_histories_path(@pet_history.pet_id), class: 'btn btn-primary' %>
