@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :clients
   resources :pets do
     resources :pet_histories
   end

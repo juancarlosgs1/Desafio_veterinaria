@@ -15,6 +15,16 @@
   <%= @pet.birthdate %>
 </p>
 
+<p>
+   <% @pet.pet_histories.each_with_index do |data, i| %>
+     <p>
+       <%= "<strong>Historia #{i+1}:</strong>".html_safe %>
+       <%= data.weight %> kg -
+       <%= data.heigth %> cm
+     </p>
+   <% end %>
+ </p>
+
 
 <table>
   <thead>
@@ -36,5 +46,6 @@
   </tbody>
 </table>
 
+<%= link_to 'Add History', pet_pet_histories_path(@pet) %> |
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %>
